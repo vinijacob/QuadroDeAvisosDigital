@@ -1,0 +1,90 @@
+/* CONTAINER PRINCIPAL */
+.login-form--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  height: 40vh;
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: larger;
+  padding: 1rem;
+  border-radius: 10px;
+  /* From https://css.glass */
+  background: rgba(232, 212, 27, 0.25);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.2px);
+  -webkit-backdrop-filter: blur(7.2px);
+  border: 1px solid rgba(255, 255, 255, 0.49);
+}
+
+/* GRID DOS CAMPOS */
+.login-form--fields {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* GRUPO LABEL + INPUT */
+.login-form--field {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+/* LABEL */
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* INPUT */
+input {
+  padding: 8px;
+  padding-right: 30px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  position: relative;
+  color: #fff;
+}
+
+input::placeholder {
+  color: #fff;
+}
+
+/* ÍCONE NO INPUT */
+.input-icon {
+  position: absolute;
+  right: 10px;
+  top: 70%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  font-weight: bold;
+  color: #888;
+  pointer-events: none;
+}
+
+/* BOTÃO DE ENVIO */
+.login-form--container button {
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.login-form--container button:hover {
+  background-color: #218838;
+}
+
+select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}

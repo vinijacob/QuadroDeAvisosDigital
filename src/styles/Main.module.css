@@ -1,0 +1,67 @@
+.main-page--wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    height: 100vh;
+    width: 100vw;
+    color: #282828;
+    /* background-color: red; */
+}
+
+.main-page--header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+
+    /* background-color: green; */
+    width: 50%;
+}
+
+.main-page--header span {
+    position: absolute;
+    top: 0;
+    right: -10px;
+    transform: translateY(-50%);
+    transform: rotate(-35deg);
+    opacity: .8;
+}
+
+
+.caption {
+    font-style: italic;
+}
+
+.main-page--login-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+
+
+    /* background-color: purple; */
+    width: 50%;
+    height: 50%;
+}
+
+.main-page--login-section a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    height: 50%;
+    width: 40%;
+    transition: .2s;
+    /* background-color: orange; */
+}
+
+.main-page--login-section a:hover {
+    transform: scale(1.1);
+}

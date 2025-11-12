@@ -2,40 +2,35 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../styles/Main.module.css';
 import SideBanner from '../components/SideBanner';
-import backgroundImage from '../assets/coming-of-age-feel.jpeg'; 
+import StudentImg from '../assets/Student1.jpg';
+import AdminImg from '../assets/Admin1.jpg'; 
 
 export default function Main() {
   return (
-    <div className={styles['main-page--wrapper']}>
-      <main className={styles['main-page--header']}>
-
-        <span><SideBanner
-            height="80px"
-            width="80px"
-            backgroundImage={backgroundImage}
-        /></span>
-
-        <h1>Seja bem-vindo ao Avisaí! </h1>
-        <p>Seu Quadro de Avisos Inteligente, um espaço feito para você acompanhar tudo o que acontece na sua instituição — desde avisos importantes até novidades do dia a dia. Informação rápida, clara e sempre ao seu alcance!</p>
+    <div className={styles['main-wrapper']}>
+      <main className={styles['main-hero']}>
+        <h1>Seja bem-vindo ao <span>Avisaí!</span></h1>
+        <p>
+          Seu Quadro de Avisos Inteligente — acompanhe tudo o que acontece na sua instituição, 
+          desde comunicados importantes até novidades do dia a dia. 
+          Informação rápida, clara e sempre ao seu alcance!
+        </p>
         <p className={styles.caption}>Apresentado por UNINORTE</p>
       </main>
 
-      <aside className={styles['main-page--login-section']}>
-        <Link to='/loginAluno'>
-          <SideBanner 
-            height="100%"
-            width="100%"
-            backgroundImage={backgroundImage}
-          />
-          <button>Fazer Login como Aluno</button>
+      <aside className={styles['login-section']}>
+        <Link to='/loginAluno' className={styles.card}>
+          <SideBanner height="100%" width="100%" backgroundImage={StudentImg} />
+          <div className={styles.overlay}>
+            <button>Login como Aluno</button>
+          </div>
         </Link>
-        <Link to='/loginAdmin'>
-          <SideBanner 
-            height="100%"
-            width="100%"
-            backgroundImage={backgroundImage}
-          />
-          <button>Fazer Login como Administrador</button>
+
+        <Link to='/loginAdmin' className={styles.card}>
+          <SideBanner height="100%" width="100%" backgroundImage={AdminImg} />
+          <div className={styles.overlay}>
+            <button>Login como Administrador</button>
+          </div>
         </Link>
       </aside>
     </div>

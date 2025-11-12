@@ -1,44 +1,28 @@
-import React, { useState } from 'react';
-import '../styles/AuthForm.css';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../styles/AuthForm.css';
 
-export default function AuthForm({ fields, buttonText, colunas = 1, navigateURL}) {
-
-  // NAVEGAR AO SUBMIT
+export default function AuthForm({ fields, buttonText, colunas = 1, navigateURL }) {
   const navigate = useNavigate();
 
   return (
-    // FORM TAG
     <form
-      className="login-form--container"
-      onSubmit={(e) => {e.preventDefault; navigate(navigateURL);}}
+      className="auth-form"
+      onSubmit={(e) => { e.preventDefault(); navigate(navigateURL); }}
     >
-
       <div
-        className="login-form--fields"
+        className="auth-form-fields"
         style={{ gridTemplateColumns: `repeat(${colunas}, 1fr)` }}
       >
-        {/* FORM MAPPING */}
         {fields.map((field) => (
-          <div key={field.name} className="login-form--field">
-            {/* FORM LABEL */}
+          <div key={field.name} className="auth-form-field">
             <label htmlFor={field.name}>{field.label}</label>
 
-            {/* FORM INPUT/SELECT */}
             {field.type === 'select' ? (
-              <select
-                name={field.name}
-                id={field.name}
-                required
-              >
-                {/* SELECT OPTIONS MAPPING */}
-                <option value="" disabled selected>
-                  {field.placeholder}
-                </option>
+              <select name={field.name} id={field.name} required>
+                <option value="" disabled selected>{field.placeholder}</option>
                 {field.options.map((option) => (
-                  <option key={option} value={option}>
-                    {option}
-                  </option>
+                  <option key={option} value={option}>{option}</option>
                 ))}
               </select>
             ) : (
@@ -54,7 +38,6 @@ export default function AuthForm({ fields, buttonText, colunas = 1, navigateURL}
         ))}
       </div>
 
-      {/* SUBMIT BUTTON */}
       <button type="submit">{buttonText}</button>
     </form>
   );

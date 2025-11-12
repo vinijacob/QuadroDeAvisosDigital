@@ -1,90 +1,66 @@
-/* CONTAINER PRINCIPAL */
-.login-form--container {
+.auth-form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
   width: 100%;
-  height: 40vh;
-  max-width: 600px;
+  max-width: 500px;
   margin: 0 auto;
-  font-size: larger;
-  padding: 1rem;
-  border-radius: 10px;
-  /* From https://css.glass */
-  background: rgba(232, 212, 27, 0.25);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(7.2px);
-  -webkit-backdrop-filter: blur(7.2px);
-  border: 1px solid rgba(255, 255, 255, 0.49);
 }
 
-/* GRID DOS CAMPOS */
-.login-form--fields {
+.auth-form-fields {
   display: grid;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  gap: 1rem 1.5rem; /* vertical gap | horizontal gap */
 }
 
-/* GRUPO LABEL + INPUT */
-.login-form--field {
+/* Dinâmica para colunas */
+.auth-form-fields {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.auth-form-field {
   display: flex;
   flex-direction: column;
-  position: relative;
-  width: 100%;
 }
 
-/* LABEL */
-label {
+.auth-form-field label {
   margin-bottom: 5px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
-/* INPUT */
-input {
-  padding: 8px;
-  padding-right: 30px;
-  border: 1px solid #ccc;
+.auth-form-field input,
+.auth-form-field select {
+  padding: 0.7rem 0.9rem;
+  font-size: 0.95rem;
   border-radius: 8px;
-  position: relative;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.auth-form-field input:focus,
+.auth-form-field select:focus {
+  border-color: #0059ff;
+  box-shadow: 0 0 0 2px rgba(0, 89, 255, 0.2);
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #0059ff;
   color: #fff;
-}
-
-input::placeholder {
-  color: #fff;
-}
-
-/* ÍCONE NO INPUT */
-.input-icon {
-  position: absolute;
-  right: 10px;
-  top: 70%;
-  transform: translateY(-50%);
-  font-size: 1rem;
-  font-weight: bold;
-  color: #888;
-  pointer-events: none;
-}
-
-/* BOTÃO DE ENVIO */
-.login-form--container button {
-  padding: 10px;
-  background-color: #28a745;
-  color: white;
+  font-weight: 600;
+  border-radius: 10px;
   border: none;
-  border-radius: 12px;
   cursor: pointer;
   transition: 0.2s;
 }
 
-.login-form--container button:hover {
-  background-color: #218838;
+.auth-form button:hover {
+  background-color: #0043cc;
 }
 
-select {
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
+/* RESPONSIVO */
+@media (max-width: 700px) {
+  .auth-form-fields {
+    grid-template-columns: 1fr !important;
+  }
 }

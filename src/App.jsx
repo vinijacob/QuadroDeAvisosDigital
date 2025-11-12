@@ -8,6 +8,7 @@ import Cadastro from './pages/Cadastro';
 import Main from './pages/Main';
 import LoginAdmin from './pages/LoginAdmin';
 import AdminPage from './pages/AdminPage';
+import UserPage from './pages/UserPage';
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <Route path='/loginAluno' element={<LoginAluno/>}/>
         <Route path='/loginAdmin' element={<LoginAdmin/>}/>
         <Route path='/adminPage' element={<AdminPage/>}/>
+        <Route path='/userPage' element={<UserPage/>}/>
       </Routes>
     </Router>
   )

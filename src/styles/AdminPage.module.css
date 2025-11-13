@@ -95,6 +95,15 @@
   line-height: 1.6;
 }
 
+.page-link{
+  color: #fff;
+  font-weight: 900;
+}
+
+.page-link:hover{
+  color: #fff;
+}
+
 /* Botões de ação */
 .actions {
   display: flex;

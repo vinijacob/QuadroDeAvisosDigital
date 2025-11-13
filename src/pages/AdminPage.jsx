@@ -22,6 +22,7 @@ export default function AdminPage() {
       {/* Navbar */}
       <nav className={styles.navbar}>
         <h2>Meu Sistema</h2>
+        <h2><a href="/" className={styles['page-link']}>UNINORTE</a></h2>
       </nav>
 
       {/* Faixa de opções */}

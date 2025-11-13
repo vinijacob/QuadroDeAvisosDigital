@@ -21,7 +21,7 @@ export default function LoginAluno() {
           <p>Não possui uma conta? <Link to="/cadastro">Clique aqui</Link></p>
         </div>
 
-        <AuthForm fields={loginFields} buttonText="Entrar" colunas={1} navigateURL="/alunoPage" />
+        <AuthForm fields={loginFields} buttonText="Entrar" colunas={1} navigateURL="/userPage" />
 
         <footer className="form-footer">
           <Link to="/loginAdmin"><button>Entrar como Administrador?</button></Link>
